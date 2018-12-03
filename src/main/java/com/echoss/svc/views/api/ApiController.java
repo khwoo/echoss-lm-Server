@@ -85,6 +85,8 @@ public class ApiController {
 		logger.debug(params +"");
 		model.addAttribute("resCd" , "0000");
 		model.addAttribute("info" , "321");
+
+
 		return "jsonView";
 
 	}
