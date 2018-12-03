@@ -45,7 +45,8 @@
 	    <mvc:interceptor>
 	        <mvc:mapping path="/*"/>
 	        <mvc:mapping path="/*/*"/>
-		    <mvc:exclude-mapping path="/api/login*" />
+		    <mvc:exclude-mapping path="/api/*" />
+		    <mvc:exclude-mapping path="/noti/*" />
 			<beans:bean class="com.echoss.svc.common.interceptor.CommonInterceptor"/>
 	    </mvc:interceptor>
         <bean id="localeChangeInterceptor" class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
