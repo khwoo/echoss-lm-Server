@@ -64,6 +64,8 @@ public class JSONView extends MappingJackson2JsonView {
 			logger.debug("응답메시지 : [" + jsonStr + "]");
 		}
 
+
+
 		response.getWriter().write(jsonStr);
 	}
 }
