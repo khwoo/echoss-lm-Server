@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="api">
+
+	<!--
+
+		로그인 정보 체크
+
+	    2018/11/20
+
+	 -->
+	<select id="selectCheckUserInfo" parameterType="map" resultType="map">
+		SELECT
+			A.MNG_ID
+			,A.MNG_NM
+		FROM
+			ELMT_MNG_INFO A
+		WHERE
+			A.MNG_ID = #{username}
+		AND
+			A.PWD = PASSWORD(#{password})
+	</select>
+
+</mapper>

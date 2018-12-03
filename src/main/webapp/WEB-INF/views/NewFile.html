@@ -1,0 +1,250 @@
+	<form name="goReloadFrm" id="goReloadFrm" action="${loca_url}" method="get">
+		<input type="hidden" name="acntCd" id="acntCdReload" value="${acntCd}"/>
+		<input type="hidden" name="id" id="idReload" value="${id}"/>
+		<input type="hidden" name="order_id" value="<#if choice_order_id??><#if choice_order_id!=''>${choice_order_id}</#if></#if>"/>
+		<input type="hidden" name="cate_id" value="<#if choice_cate_id??><#if choice_cate_id!=''>${choice_cate_id}</#if></#if>"/>
+		<input type="hidden" name="area_id" value="<#if choice_area_id??><#if choice_area_id!=''>${choice_area_id}</#if></#if>"/>
+	</form>
+	
+	<form name="goGetFrm" id="goGetFrm" action="" method="get">
+		<input type="hidden" name="acntCd" id="acntCdGet" value="${acntCd}"/>
+		<input type="hidden" name="id" id="idGet"  value="${id}"/>
+		<input type="hidden" name="brId" id="brIdGet"/>
+		<input type="hidden" name="tid" id="tidGet"/>
+	</form>
+	
+	<form name="goPostFrm" id="goPostFrm" action="" method="POST">
+		<input type="hidden" name="acntCd" id="acntCdPost" value="${acntCd}"/>
+		<input type="hidden" name="id" id="idPost" value="${id}"/>
+		<input type="hidden" name="brId" id="brIdPost"/>
+		<input type="hidden" name="tid" id="tidPost"/>
+		<input type="hidden" name="checkYn" id="checkYnPost"/>
+	</form>
+	
+	<form name="goUserFrm" id="goUserFrm" action="" method="POST">
+		<input type="hidden" name="id" id="idUser" value= "${id}"/>
+		<input type="hidden" name="acntCd" id="acntCdUser" value="${acntCd}"/>
+		<input type="hidden" name="CITY" id="CITY" />
+		<input type="hidden" name="COUNTRY" id="COUNTRY"/>
+		<input type="hidden" name="HEAD_IMG_URL" id="HEAD_IMG_URL"/>
+		<input type="hidden" name="LANGUAGE" id="LANGUAGE"/>
+		<input type="hidden" name="NICKNAME" id="NICKNAME"/>
+		<input type="hidden" name="OPEN_ID" id="OPEN_ID"/>
+		<input type="hidden" name="PROVINCE" id="PROVINCE"/>
+		<input type="hidden" name="SEX" id="SEX"/>
+		
+		<input type="hidden" name="order_id" value="<#if choice_order_id??><#if choice_order_id!=''>${choice_order_id}</#if></#if>"/>
+		<input type="hidden" name="cate_id" value="<#if choice_cate_id??><#if choice_cate_id!=''>${choice_cate_id}</#if></#if>"/>
+		<input type="hidden" name="area_id" value="<#if choice_area_id??><#if choice_area_id!=''>${choice_area_id}</#if></#if>"/>
+	</form>
+	
+	<form name="goBannerFrm" id="goBannerFrm" action="" method="POST">
+		<input type="hidden" name="acntCd" id="acntCdBanner" value="${acntCd}" />
+		<input type="hidden" name="id" id="idBanner" value= "${id}"/>
+		<input type="hidden" name="divCd" id="divCdBanner" value= ""/>
+		<input type="hidden" name="banrId" id="banrIdBanner" value= ""/>
+		<input type="hidden" name="brId" id="brIdBanner" value= ""/>
+		<input type="hidden" name="bannerUrl" id="bannerUrl" value= ""/>
+	</form>
+	
+	<script type="text/javascript">
+		//QR Scan
+		$("#QRScanGo").click(function(){
+			wx.scanQRCode({ 
+			       needResult: 0, // 0 wechat에서 결과 처리 , 1 결과 return              
+			       scanType: ["qrCode","barCode"], // qrcode barcode 
+			       success: function (res) {
+			            var result = res.resultStr; // ?needResult ? 1 ?，??返回的?果
+			            drawPopup(errMsg);
+			       }
+			});
+		});
+		
+		// 위쳇 고객정보 조회
+		emsp.Wechat.query(function(res){
+				$('#CITY').val(res.CITY);
+				$('#COUNTRY').val(res.COUNTRY);
+				$('#HEAD_IMG_URL').val(res.HEAD_IMG_URL);
+				$('#LANGUAGE').val(res.LANGUAGE);
+				$('#NICKNAME').val(res.NICKNAME);
+				$('#OPEN_ID').val(res.OPEN_ID);
+				$('#PROVINCE').val(res.PROVINCE);
+				$('#SEX').val(res.SEX);
+				
+				getGetReload();
+			}
+			, function(errCd, errMsg){
+				var link = 'http://emsp.onetwocm.cn/wechat/init.action' + window.location.search.substring(0, window.location.search.indexOf("&id="));
+				if (errCd == "W1004" || errCd == "W1005")
+					window.location.replace(link);
+				else
+					drawPopup(errMsg);
+			}
+		);
+
+		function getGetReload() { 
+			//user target Banner & list bookmark
+			var str = $('#goUserFrm').serialize();
+			$.ajax({
+				type:"post",
+				data:str,
+				url:"${loca_url}/userinfo",
+				success: function(result){
+					$("#ajax").remove();
+					
+				}
+			});
+		}
+
+		//banner
+		function goBannerClick(url, clickval, dcval){
+			$('#divCd').val(dcval);
+			$('#banrIdBanner').val(clickval);
+			$('#brIdBanner').val('');
+			$('#bannerUrl').val(url);
+			
+			var str = $('#goBannerFrm').serialize();
+			$.ajax({
+				type:"post",
+				data:str,
+				url:"${loca_url}/bannerclick",
+				success: function(result){
+					$("#ajax").remove();
+					if(!result){
+						//alert('errorajax');
+						return false;
+					}
+					$(location).attr('href', result);
+				}
+			});
+		}
+
+		function goDetail(url){
+			window.location.href = url;
+		}
+		
+		function goBookMark(obj){
+			$('#brIdPost').val($(obj).val());
+			$('#checkYnPost').val($(obj).is(':checked'));
+			var str = $('#goPostFrm').serialize();
+			$.ajax({
+				type:"post",
+				data:str,
+				url:"/shopbookmark",
+				success: function(result){
+					$("#ajax").remove();
+				}
+			});
+		}
+		
+		//scroll loading
+		var totalcount = ${total_count};
+		//var lastid = $(".shoplist_c:last").attr("id");
+		var lastid = 0;
+		var bool_sw = true;
+
+		function getReadList() { 
+			if(Number(totalcount) > Number(lastid)){			
+				bool_sw = false;
+				$('#loading').css('text-align', 'center');
+				$('#loading').html("<img src='/resources/images/img/loading_3.gif'>");
+				
+				$.post("/page/CM000011?order_id="+$("input[name='order_id']").val()+"&cate_id="+$("input[name='cate_id']").val()+"&area_id="+$("input[name='area_id']").val()+"&waid="+$("input[name='waid']").val()+"&t_cnt="+totalcount+"&lastID=" + $(".shoplist_c:last").attr("id"),
+				function(data){ 
+					if (data != "") {
+						$(".shoplist_c:last").after(data);
+						bool_sw = true;
+					} 
+					$('#loading').empty();
+				});
+			};
+		};  
+		
+		$(window).scroll(function() {
+			lastid = $(".shoplist_c:last").attr("id");
+			if(Number(totalcount) > Number(lastid)){
+				if($(window).scrollTop() == $(document).height() - $(window).height()){ 
+					if(bool_sw){
+						getReadList();
+					}
+				} 
+			}
+		});
+
+		//list reload
+		function goReload(key, key_val){
+			var key_val_default = 2;
+			switch (key) {
+				case 1 : $("input[name='order_id']").val(key_val);
+					break;
+				case 2 : $("input[name='cate_id']").val(key_val);
+					break;
+				case 3 : $("input[name='area_id']").val(key_val);
+					break;
+				default : $("input[name='order_id']").val(key_val_default);
+					break;
+			}
+			$('#goReloadFrm').submit();
+		}
+
+		// bottom btn on / off event
+		var bottomMenuWrap = document.querySelector(".ul_menu_innerList");
+		var bottomMenuArray = bottomMenuWrap.getElementsByTagName("li");
+		for (var c=0;c<bottomMenuArray.length;c++){
+			bottomMenuArray[c].addEventListener("click",function(){
+				for (var d=0;d<bottomMenuArray.length;d++){
+					bottomMenuArray[d].className =" cursor_style";
+				}
+				this.className +=" cursor_style select_on";
+				hideDivBottomMenu('divBottomMenu');
+			});
+		}
+
+		// area btn click 
+		var thumbSlide = document.querySelector(".div_slide_sitethumbnail_inner");
+		var thumbSlideArray = thumbSlide.getElementsByClassName("swiper-slide");
+		for (var a=0;a<thumbSlideArray.length;a++){
+			thumbSlideArray[a].addEventListener("click",function(){
+				for (var b=0;b<thumbSlideArray.length;b++){
+					thumbSlideArray[b].className ="swiper-slide";
+				}
+				this.className +=" select_over";
+			});
+		}
+
+		// slide banner 1
+		var introSwiper = new Swiper('#main_slide_banner01', {
+		    spaceBetween: 0,
+		    resistanceRatio:0.1,
+		    paginationClickable: true,
+		    loop:true,
+		    autoplay:4200
+		});
+
+		// slide banner 2
+		var introSwiper2 = new Swiper('#main_slide_banner02', {
+		    spaceBetween: 0,
+		    resistanceRatio:0.1,
+		    paginationClickable: true,
+		    loop:true,
+		    autoplay:4200
+		});
+
+		// slide area 
+		var introSwiper4 = new Swiper('#divSlideSitethumbnail', {
+			slidesPerView: 4,
+			paginationClickable: true,
+			spaceBetween: 10
+		});
+
+
+		// divMainContent min - Height
+		var heightTop = document.querySelector(".div_banner_top").offsetHeight+document.querySelector(".div_header_tab").offsetHeight+document.querySelector(".div_selected_info").offsetHeight+document.querySelector(".div_banner_sub").offsetHeight;
+		document.querySelector(".div_couponList_wrap").style.minHeight = (window.innerHeight-heightTop-50) +"px";
+		
+		window.onpageshow = function(event) {
+		    if (event.persisted) {
+		        document.location.reload();
+		    }
+		};
+	</script>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="euc-kr"?>
+<!DOCTYPE taglib
+ PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN"
+ "http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+
+
+<taglib>
+    <tlib-version>1.0</tlib-version>
+    <jsp-version>1.2</jsp-version>
+    <short-name>ta</short-name>
+    <uri>/ta-tags</uri>
+    <description>ta common Tags</description>
+
+    <tag>
+        <name>pagination</name>
+        <tag-class>com.echoss.svc.common.tag.paging.PaginationTag</tag-class>
+        <body-content>empty</body-content>
+        <description>Pagination Tag</description>
+        <attribute>
+            <name>paginationInfo</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>type</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>jsFunction</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    <tag>
+        <name>formatDate</name>
+        <tag-class>com.echoss.svc.common.tag.FormatDateTag</tag-class>
+        <body-content>jsp</body-content>
+        <description>날짜/시간 변환</description>
+        <attribute>
+            <name>value</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>infmt</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>outfmt</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    <tag>
+        <name>formatTime</name>
+        <tag-class>com.echoss.svc.common.tag.FormatTimeTag</tag-class>
+        <body-content>jsp</body-content>
+        <description>시간 변환</description>
+        <attribute>
+            <name>value</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>infmt</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>outfmt</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    <tag>
+        <name>formatHpNoTag</name>
+        <tag-class>com.echoss.svc.common.tag.FormatHpNoTag</tag-class>
+        <body-content>jsp</body-content>
+        <description>휴대폰 번호 변환</description>
+        <attribute>
+            <name>value</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    <tag>
+        <name>selectTimeTag</name>
+        <tag-class>com.echoss.svc.common.tag.SelectTimeTag</tag-class>
+        <body-content>jsp</body-content>
+        <description>시간 설정 Select Box</description>
+        <attribute>
+            <name>name</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>selected</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>onChange</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>useTitle</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>title</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>style</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+</taglib>

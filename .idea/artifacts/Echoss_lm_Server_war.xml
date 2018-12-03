@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Echoss-lm-Server:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="Echoss-lm-Admin-Server-1.0.0-BUILD-SNAPSHOT.war">
+      <element id="artifact" artifact-name="Echoss-lm-Server:war exploded" />
+    </root>
+  </artifact>
+</component>

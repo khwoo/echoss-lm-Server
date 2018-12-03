@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 30초마다 설정 파일의 변경을 확인한다. 파일이 변경되면 다시 로딩한다 -->
+<configuration scan="true" scanPeriod="30 seconds">
+	<!-- Log Mode (D: test, R: real) -->
+ 	<property name="logback.mode" value="D"/>
+ 	<!-- Log Path -->
+ 	<!-- <property name="logback.path" value="D:/logs"/> -->
+ 	
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<withJansi>true</withJansi>
+		<encoder>
+			<pattern>%-80(%d{HH:mm:ss.SSS} [%thread] %highlight(%-5level) %logger{36}) - %msg%n</pattern>
+		</encoder>
+	</appender>
+	<appender name="LOG_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${logback.path}/debug.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- 파일이 하루에 한개씩 생성된다 -->
+			<fileNamePattern>${logback.path}/debug.log.%d{yyyy-MM-dd}</fileNamePattern>
+			
+			<!-- maxHIstory 설정은 위 부분에 롤링 정책에 따라 적용되 된다고 보면된다. 위 설정데로 라면 30일이 지난 파일은 삭제가 된다.-->
+			<maxHistory>30</maxHistory>
+	    </rollingPolicy>
+		
+	    <encoder>
+	        <pattern>%-80(%d{HH:mm:ss.SSS} [%thread] %highlight(%-5level) %logger{35}) - %msg%n</pattern>
+	    </encoder>
+	</appender>
+	<appender name="LOG_FILE_ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<File>${logback.path}/error.log</File>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>${logback.path}/error.log.%d{yyyy-MM-dd}</FileNamePattern>
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<Pattern>%-80(%d{HH:mm:ss.SSS} [%thread] %-5level %logger{35}) - %msg %n</Pattern>
+		</encoder>
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>ERROR</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+	</appender>
+	
+	<logger name="org.springframework" level="info"/>
+	<logger name="jdbc.resultset" level="error"/>
+	<logger name="jdbc.audit" level="error"/>
+	<logger name="jdbc.sqltiming" level="error"/>
+	
+	<if condition='property("logback.mode").equals("D")'>
+		<!-- 설정파일에 MODE 가 D로 정의되어 있으면 로깅 레벨을 debug로 지정 -->
+		<then>
+			<root level="debug">
+				<appender-ref ref="console"/>
+<!-- 				<appender-ref ref="LOG_FILE"/> -->
+<!-- 				<appender-ref ref="LOG_FILE_ERROR"/> -->
+			</root>
+		</then>
+		<else>
+			<!-- DB Result Set -->
+			<logger name="jdbc.connection" level="error"/>
+			<!-- DB Result Set -->
+			<logger name="jdbc.resultsettable" level="error"/>
+			<!-- DB Query -->
+			<logger name="jdbc.sqlonly" level="error"/>
+			<root level="info">
+				<appender-ref ref="LOG_FILE"/>
+				<appender-ref ref="LOG_FILE_ERROR"/>
+			</root>
+		</else>
+	</if>
+</configuration>

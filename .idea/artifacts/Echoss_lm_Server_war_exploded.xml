@@ -1,0 +1,174 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Echoss-lm-Server:war exploded">
+    <output-path>$PROJECT_DIR$/target/Echoss-lm-Admin-Server-1.0.0-BUILD-SNAPSHOT</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Echoss-lm-Server" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-web:4.0.1.RELEASE" />
+          <element id="library" level="project" name="Maven: aopalliance:aopalliance:1.0" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-core:4.0.1.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-config:4.0.1.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context:4.3.4.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:4.3.4.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:4.3.4.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-oxm:4.3.4.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-core:4.3.4.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-web:4.3.4.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-beans:4.3.4.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-aop:4.3.4.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-expression:4.3.4.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-tx:4.3.4.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context-support:4.3.4.RELEASE" />
+          <element id="library" level="project" name="Maven: commons-fileupload:commons-fileupload:1.3.1" />
+          <element id="library" level="project" name="Maven: commons-io:commons-io:1.3.2" />
+          <element id="library" level="project" name="Maven: commons-dbcp:commons-dbcp:1.4" />
+          <element id="library" level="project" name="Maven: commons-pool:commons-pool:1.5.4" />
+          <element id="library" level="project" name="Maven: org.freemarker:freemarker:2.3.23" />
+          <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.2.7" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.30" />
+          <element id="library" level="project" name="Maven: org.aspectj:aspectjrt:1.6.10" />
+          <element id="library" level="project" name="Maven: ch.qos.logback:logback-access:1.0.13" />
+          <element id="library" level="project" name="Maven: ch.qos.logback:logback-core:1.0.13" />
+          <element id="library" level="project" name="Maven: ch.qos.logback:logback-classic:1.0.13" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.5" />
+          <element id="library" level="project" name="Maven: org.slf4j:jcl-over-slf4j:1.7.5" />
+          <element id="library" level="project" name="Maven: org.slf4j:log4j-over-slf4j:1.7.5" />
+          <element id="library" level="project" name="Maven: org.codehaus.janino:janino:2.7.7" />
+          <element id="library" level="project" name="Maven: org.codehaus.janino:commons-compiler:2.7.7" />
+          <element id="library" level="project" name="Maven: org.lazyluke:log4jdbc-remix:0.2.7" />
+          <element id="library" level="project" name="Maven: org.fusesource.jansi:jansi:1.9" />
+          <element id="library" level="project" name="Maven: org.jsoup:jsoup:1.10.1" />
+          <element id="library" level="project" name="Maven: com.google.code.geocoder-java:geocoder-java:0.16" />
+          <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.2.4" />
+          <element id="library" level="project" name="Maven: commons-httpclient:commons-httpclient:3.1" />
+          <element id="library" level="project" name="Maven: org.imgscalr:imgscalr-lib:4.2" />
+          <element id="library" level="project" name="Maven: javax.inject:javax.inject:1" />
+          <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
+          <element id="library" level="project" name="Maven: org.apache.poi:poi:3.10-FINAL" />
+          <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.5" />
+          <element id="library" level="project" name="Maven: org.apache.poi:poi-ooxml:3.10-FINAL" />
+          <element id="library" level="project" name="Maven: dom4j:dom4j:1.6.1" />
+          <element id="library" level="project" name="Maven: xml-apis:xml-apis:1.0.b2" />
+          <element id="library" level="project" name="Maven: org.apache.poi:poi-ooxml-schemas:3.10-FINAL" />
+          <element id="library" level="project" name="Maven: org.apache.xmlbeans:xmlbeans:2.3.0" />
+          <element id="library" level="project" name="Maven: stax:stax-api:1.0.1" />
+          <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-core-asl:1.9.13" />
+          <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-mapper-asl:1.9.13" />
+          <element id="library" level="project" name="Maven: org.mybatis:mybatis-spring:1.1.1" />
+          <element id="library" level="project" name="Maven: commons-lang:commons-lang:2.6" />
+          <element id="library" level="project" name="Maven: net.sf.json-lib:json-lib-ext-spring:1.0.2" />
+          <element id="library" level="project" name="Maven: net.sf.json-lib:json-lib:jdk15:2.2.2" />
+          <element id="library" level="project" name="Maven: commons-beanutils:commons-beanutils:1.7.0" />
+          <element id="library" level="project" name="Maven: commons-collections:commons-collections:3.2" />
+          <element id="library" level="project" name="Maven: net.sf.ezmorph:ezmorph:1.0.4" />
+          <element id="library" level="project" name="Maven: javax.servlet:servlet-api:2.4" />
+          <element id="library" level="project" name="Maven: log4j:log4j:1.2.14" />
+          <element id="library" level="project" name="Maven: cglib:cglib-nodep:3.1" />
+          <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpcore:4.4.4" />
+          <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpmime:4.4-alpha1" />
+          <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpclient:4.5.2" />
+          <element id="library" level="project" name="Maven: commons-logging:commons-logging:1.1.3" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.7.0" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.7.0" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.7.0" />
+          <element id="library" level="project" name="Maven: javax.servlet:javax.servlet-api:3.1.0" />
+          <element id="library" level="project" name="Maven: batik:batik-awt-util:1.6-1" />
+          <element id="library" level="project" name="Maven: batik:batik-dom:1.6-1" />
+          <element id="library" level="project" name="Maven: batik:batik-css:1.6-1" />
+          <element id="library" level="project" name="Maven: xerces:xercesImpl:2.5.0" />
+          <element id="library" level="project" name="Maven: batik:batik-ext:1.6-1" />
+          <element id="library" level="project" name="Maven: xml-apis:xmlParserAPIs:2.0.2" />
+          <element id="library" level="project" name="Maven: batik:batik-svggen:1.6-1" />
+          <element id="library" level="project" name="Maven: batik:batik-gvt:1.6-1" />
+          <element id="library" level="project" name="Maven: batik:batik-svg-dom:1.6-1" />
+          <element id="library" level="project" name="Maven: batik:batik-parser:1.6-1" />
+          <element id="library" level="project" name="Maven: batik:batik-util:1.6-1" />
+          <element id="library" level="project" name="Maven: batik:batik-gui-util:1.6-1" />
+          <element id="library" level="project" name="Maven: batik:batik-xml:1.6-1" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-support:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:jmespath-java:1.0" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-simpledb:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-servicecatalog:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-simpleworkflow:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-storagegateway:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-route53:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-s3:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-importexport:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-sts:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-sqs:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-rds:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-redshift:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-elasticbeanstalk:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-glacier:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-iam:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-datapipeline:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-elasticloadbalancing:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-elasticloadbalancingv2:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-emr:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-elasticache:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-elastictranscoder:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-ec2:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-dynamodb:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-sns:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-cloudtrail:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-cloudwatch:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-logs:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-events:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-cognitoidentity:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-cognitosync:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-directconnect:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-cloudformation:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-cloudfront:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-kinesis:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-opsworks:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-ses:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-autoscaling:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-cloudsearch:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-cloudwatchmetrics:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-codedeploy:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-codepipeline:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-kms:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-config:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-lambda:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-ecs:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-ecr:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-cloudhsm:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-ssm:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-workspaces:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-machinelearning:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-directory:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-efs:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-codecommit:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-devicefarm:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-elasticsearch:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-waf:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-marketplacecommerceanalytics:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-inspector:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-iot:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-api-gateway:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-acm:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-gamelift:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-dms:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-marketplacemeteringservice:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-cognitoidp:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-discovery:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-applicationautoscaling:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-snowball:1.11.31" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-core:1.11.31" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:2.6.6" />
+          <element id="library" level="project" name="Maven: joda-time:joda-time:2.8.1" />
+          <element id="library" level="project" name="Maven: com.amazonaws:aws-java-sdk-swf-libraries:1.11.22" />
+          <element id="library" level="project" name="Maven: com.auth0:java-jwt:2.2.0" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/Echoss-lm-Admin-Server-1.0.0-BUILD-SNAPSHOT/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="Echoss-lm-Server/web/Web" />
+    </root>
+  </artifact>
+</component>

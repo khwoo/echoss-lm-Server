@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="noti">
+	<update id="updateStorePrinter" parameterType="map">
+		UPDATE wto_printer
+		SET printer_status = #{printer_status}
+			,status_text = #{status_text}
+			,mod_date = NOW()
+			,mod_id = 'Noti'
+		WHERE printer_code = #{printer_code}
+	</update>
+	
+	<update id="updateOrderInfo" parameterType="map">
+		UPDATE wto_order
+		SET print_state = #{print_state}
+		WHERE order_num = #{order_num}
+	</update>
+	
+	<update id="insertOrderPrintHis" parameterType="map">
+		INSERT INTO	wto_print_list	(
+										order_num
+										,store_code
+										,printer_code
+										,print_type
+										,print_status
+										,status_text
+										,reg_date
+									)
+							VALUES	(
+										#{order_num}
+										,#{store_code}
+										,#{printer_code}
+										,#{print_type}
+										,#{print_state_his}
+										,#{status_text}
+										,NOW()
+									)
+	</update>
+
+	<!--
+
+		주문 정보 조회 [선처리]
+
+	    2018/11/13
+
+	 -->
+	<select id="selectOrderInfo" parameterType="map" resultType="map">
+		SELECT
+			A.order_num
+		FROM
+			wto_order A
+		WHERE
+			A.order_num = #{order_num}
+		AND
+			A.order_state = 'A'
+	</select>
+
+	<!--
+
+		주문 정보 수정 [결제완료 OR 주문취소]
+
+	    2018/11/13
+
+	 -->
+	<update id="updateOrderStateInfo" parameterType="map">
+		UPDATE
+			wto_order
+		SET
+			order_state = #{order_state}
+			, payment_date = DATE_FORMAT( #{AuthDate} ,'%Y-%m-%d %H:%i:%s')
+			,nice_pay_no = #{nice_pay_no}
+		WHERE
+			order_num = #{order_num}
+	</update>
+</mapper>
